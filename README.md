@@ -103,7 +103,10 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 # 3. Instalar dependencias
 pip install -r requirements.txt
 
-# 4. Configurar variables de entorno
+# 4. Instalar el paquete en modo desarrollo
+pip install -e .
+
+# 5. Configurar variables de entorno
 cp .env.example .env
 # Editar .env si es necesario (los defaults funcionan con Ollama local)
 ```
@@ -122,15 +125,10 @@ cp .env.example .env
 ### Interfaz Web (Streamlit)
 
 ```bash
-# Linux / macOS
-PYTHONPATH=. streamlit run src/ui/app.py
-
-# Windows (PowerShell)
-$env:PYTHONPATH="."; streamlit run src/ui/app.py
-
-# Windows (CMD)
-set PYTHONPATH=. && streamlit run src/ui/app.py
+streamlit run src/ui/app.py
 ```
+
+> Si ves el error `ModuleNotFoundError: No module named 'src'`, asegurate de haber ejecutado `pip install -e .` desde la raíz del proyecto (paso 4 de Instalación). Eso registra el paquete en el entorno virtual y resuelve los imports.
 
 Abrir http://localhost:8501 en el navegador.
 
@@ -252,6 +250,7 @@ pytest --cov=src tests/
 ```
 .
 ├── LICENSE               # Licencia MIT
+├── pyproject.toml        # Configuración del paquete
 ├── .env.example          # Variables de entorno de ejemplo
 ├── .gitignore            # Exclusiones
 ├── README.md             # Este archivo
