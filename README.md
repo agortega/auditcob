@@ -122,7 +122,14 @@ cp .env.example .env
 ### Interfaz Web (Streamlit)
 
 ```bash
-streamlit run src/ui/app.py
+# Linux / macOS
+PYTHONPATH=. streamlit run src/ui/app.py
+
+# Windows (PowerShell)
+$env:PYTHONPATH="."; streamlit run src/ui/app.py
+
+# Windows (CMD)
+set PYTHONPATH=. && streamlit run src/ui/app.py
 ```
 
 Abrir http://localhost:8501 en el navegador.
