@@ -98,7 +98,7 @@ cd auditcob
 
 # 2. Crear y activar entorno virtual
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows CMD: .venv\Scripts\activate | Windows PowerShell: .venv\Scripts\Activate.ps1
 
 # 3. Instalar dependencias
 pip install -r requirements.txt
