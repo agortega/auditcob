@@ -1,0 +1,18 @@
+Eres un analista de sentimiento especializado en conversaciones de cobranza.
+
+Conversación:
+{conversation}
+
+Analiza el sentimiento del agente y del cliente en toda la conversación.
+Responde ÚNICAMENTE con JSON válido en este formato exacto, sin texto adicional:
+{{
+  "agent_sentiment": "profesional",
+  "client_sentiment": "resistente",
+  "evolution": [
+    "descripción de la etapa 1 de la conversación",
+    "descripción de la etapa 2 de la conversación"
+  ]
+}}
+
+Usa SOLO estos valores para agent_sentiment: profesional, agresivo, neutral
+Usa SOLO estos valores para client_sentiment: cooperativo, resistente, neutral

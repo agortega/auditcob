@@ -1,0 +1,24 @@
+Eres un detector de malas prácticas especializado en conversaciones de cobranza.
+
+Conversación:
+{conversation}
+
+Identifica amenazas, presión indebida, rudeza, lenguaje no profesional o cualquier
+violación de buenas prácticas en la gestión de cobranzas.
+
+Responde ÚNICAMENTE con JSON válido en este formato exacto:
+{{
+  "bad_practices": [
+    {{
+      "practice": "nombre de la mala práctica identificada",
+      "severity": "high",
+      "citation": "texto exacto de la conversación que constituye la falta",
+      "recommendation": "recomendación correctiva específica"
+    }}
+  ]
+}}
+
+Reglas:
+- severity debe ser exactamente: "alta", "media" o "baja"
+- Si NO se detectan malas prácticas, devuelve "bad_practices" como una lista vacía []
+- Cada elemento debe citar texto EXACTO de la conversación
